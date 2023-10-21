@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:reminiscence_therapy_app/models/topic.dart';
+import 'package:reminiscence_therapy_app/models/topic_model.dart';
 
 class TopicService {
   Future<List<Topic>> fetchTopics() async {

@@ -13,14 +13,3 @@ class Topic {
     );
   }
 }
-
-Future<List<Topic>> getTopics() async {
-  final QuerySnapshot topicSnapshot =
-  await FirebaseFirestore.instance.collection('topics').get();
-
-  final topics = topicSnapshot.docs
-      .map((document) => Topic.fromDocument(document))
-      .toList();
-
-  return topics;
-}

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:reminiscence_therapy_app/screens/choose_topic_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _ViewImageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _ViewImageState extends State<Home> {
+class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class _ViewImageState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue[900],
-        title: Text('Home'),
+        title: const Text('Home'),
       ),
       body: Center(
         child: TextButton(
@@ -27,7 +26,7 @@ class _ViewImageState extends State<Home> {
             // Navigator.push(context, MaterialPageRoute(builder: (context) => ChooseTopic()));
             Navigator.pushNamed(context, '/choose-topic');
           },
-          child: Text('Reminscence Therapy'),
+          child: const Text('Reminscence Therapy'),
         ),
       ),
     );

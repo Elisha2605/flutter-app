@@ -8,7 +8,7 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MaterialApp(
-    initialRoute: '/home',
+    initialRoute: '/choose-topic',
     routes: {
       '/home': (context) => const Home(),
       '/choose-topic': (context) => const ChooseTopic(),
