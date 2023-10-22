@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reminiscence_therapy_app/models/topic_model.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:reminiscence_therapy_app/services/topic_service.dart';
 
 class ViewImage extends StatefulWidget {
   const ViewImage({super.key});
@@ -12,26 +13,21 @@ class ViewImage extends StatefulWidget {
 class _ViewImageState extends State<ViewImage> {
   @override
   Widget build(BuildContext context) {
-    final Topic topic = ModalRoute.of(context)!.settings.arguments as Topic;
+    final Topic topic = ModalRoute
+        .of(context)!
+        .settings
+        .arguments as Topic;
 
     final List<String> imageUrls = topic.images;
+    // topic service
+    final TopicService topicService = TopicService();
 
-    // file picker
-    Future filePicker() async {
-      FilePickerResult? result = await FilePicker.platform.pickFiles(
-        type: FileType.custom,
-        allowedExtensions: ['jpg', 'pdf', 'doc'],
-      );
-      // print(result);
-      return result;
-    }
-
-    // Image container widget
+    // Image container - widget
     Widget imageContainer(String imageUrl) {
       return Container(
         decoration: BoxDecoration(
           borderRadius:
-              BorderRadius.circular(12.0), // Adjust the radius as needed
+          BorderRadius.circular(12.0),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12.0),
@@ -43,6 +39,31 @@ class _ViewImageState extends State<ViewImage> {
             fit: BoxFit.cover,
           ),
         ),
+      );
+    }
+
+    // buttons for choose image source - widget
+    Widget uploadImageButtons() {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            leading: const Icon(Icons.camera),
+            title: const Text('Camera'),
+            onTap: () {
+              topicService.getUploadedImage(ImageSource.camera);
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.image),
+            title: const Text('Gallery'),
+            onTap: () async {
+              topicService.getUploadedImage(ImageSource.gallery);
+              Navigator.pop(context);
+            },
+          )
+        ],
       );
     }
 
@@ -68,23 +89,7 @@ class _ViewImageState extends State<ViewImage> {
           showModalBottomSheet(
               context: context,
               builder: (context) {
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    ListTile(
-                      leading: const Icon(Icons.camera),
-                      title: const Text('Camera'),
-                      onTap: () => {
-                        filePicker()
-                      },
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.browse_gallery),
-                      title: const Text('Gallery'),
-                      onTap: () => Navigator.of(context).pop(),
-                    )
-                  ],
-                );
+                return uploadImageButtons();
               });
         },
         tooltip: 'Upload Image',

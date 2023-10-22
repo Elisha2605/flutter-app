@@ -11,10 +11,10 @@ class ChooseTopic extends StatefulWidget {
 
 class _ChooseTopicState extends State<ChooseTopic> {
 
+  // comment if DB is used.
   List<Topic> topics = [];
 
-  // dummy data
-
+  // dummy topics data - uncomment if DB is not used.
   /*List<Topic> topics = [
     Topic(name: 'My childhood', images: [
       'https://images.unsplash.com/photo-1579763863374-132c0184f2aa?w=300',

@@ -18,12 +18,18 @@ class _HomeState extends State<Home> {
         title: const Text('Home'),
       ),
       body: Center(
-        child: TextButton(
-          style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            elevation: 0,
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24), // Add padding
+            textStyle: const TextStyle(
+              fontSize: 16, // Adjust font size
+              fontWeight: FontWeight.bold, // Adjust font weight
+            ),
+            backgroundColor: Colors.blue[900],
           ),
+          child: const Text('Go To Reminiscence Therapy'),
           onPressed: () => Navigator.pushNamed(context, '/choose-topic'),
-          child: const Text('Reminscence Therapy'),
         ),
       ),
     );
