@@ -22,7 +22,7 @@ class _ViewImageState extends State<ViewImage> {
         type: FileType.custom,
         allowedExtensions: ['jpg', 'pdf', 'doc'],
       );
-      print(result);
+      // print(result);
       return result;
     }
 
