@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Topic {
-  final String name;
-  final List<String> images;
+  String name;
+  List<String> images;
 
   Topic({required this.name, required this.images});
 
