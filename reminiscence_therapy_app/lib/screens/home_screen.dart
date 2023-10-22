@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 0,
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24), // Add padding
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
             textStyle: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
