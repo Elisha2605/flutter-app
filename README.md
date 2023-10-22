@@ -46,7 +46,7 @@ To run the Reminiscence Therapy App, follow these simple steps:
 
 2. **Install Dependencies:**
     - Navigate to the project directory in your terminal and install 
-    - all the necessary dependencies using Flutter. Use the following command:
+      all the necessary dependencies using Flutter. Use the following command:
       ```
       flutter pub get
       ```
