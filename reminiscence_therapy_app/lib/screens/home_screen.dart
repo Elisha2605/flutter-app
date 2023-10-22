@@ -22,10 +22,7 @@ class _HomeState extends State<Home> {
           style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
           ),
-          onPressed: () {
-            // Navigator.push(context, MaterialPageRoute(builder: (context) => ChooseTopic()));
-            Navigator.pushNamed(context, '/choose-topic');
-          },
+          onPressed: () => Navigator.pushNamed(context, '/choose-topic'),
           child: const Text('Reminscence Therapy'),
         ),
       ),

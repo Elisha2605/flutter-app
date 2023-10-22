@@ -10,7 +10,29 @@ class ChooseTopic extends StatefulWidget {
 }
 
 class _ChooseTopicState extends State<ChooseTopic> {
+
   List<Topic> topics = [];
+
+  // dummy data
+
+  /*List<Topic> topics = [
+    Topic(name: 'My childhood', images: [
+      'https://images.unsplash.com/photo-1579763863374-132c0184f2aa?w=300',
+      'https://images.unsplash.com/photo-1544632522-23a3a265c321?w=300ﬁ'
+    ]),
+    Topic(name: 'Food', images: [
+      'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300',
+      'https://images.unsplash.com/photo-1518843875459-f738682238a6?w=300'
+    ]),
+    Topic(name: 'Art', images: [
+      'https://images.unsplash.com/photo-1545989253-02cc26577f88?w=300',
+      'https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?w=300',
+      'https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=300'
+    ]),
+    Topic(name: 'Household', images: [
+      'https://images.unsplash.com/photo-1610527003928-47afd5f470c6?w=300'
+    ]),
+  ];*/
 
   // topic service
   final TopicService topicService = TopicService();
@@ -36,9 +58,7 @@ class _ChooseTopicState extends State<ChooseTopic> {
       padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
       child: Card(
         child: ListTile(
-          onTap: () {
-            navigateToImages(index);
-          },
+          onTap: ()  => navigateToImages(index),
           title: Text(topic.name),
         ),
       ),

@@ -3,13 +3,23 @@ import 'package:reminiscence_therapy_app/models/topic_model.dart';
 
 class TopicService {
   Future<List<Topic>> fetchTopics() async {
-    final QuerySnapshot topicSnapshot =
-    await FirebaseFirestore.instance.collection('topics').get();
+    try {
+      final QuerySnapshot topicSnapshot =
+      await FirebaseFirestore.instance.collection('topics').get();
 
-    final topics = topicSnapshot.docs
-        .map((document) => Topic.fromDocument(document))
-        .toList();
+      final topics = topicSnapshot.docs
+          .map((document) => Topic.fromDocument(document))
+          .toList();
 
-    return topics;
+      return topics;
+    } catch (e) {
+      print('Error in fetchTopics: $e');
+      return [];
+    }
   }
 }
+
+
+
+
+
