@@ -26,8 +26,6 @@ organized by different topics.
 - After selecting a topic, users are taken to the View Images Screen.
 - Here, users can view images related to the chosen topic.
 
-
-
 ## stack used
 - Dart: programming language
 - Flutter: framework for building the user interface and handling the app's logic
@@ -74,8 +72,13 @@ To run the Reminiscence Therapy App, follow these simple steps:
       flutter run
       ```
 
-5. **Explore the App:**
-    - Once the app is running, you can explore the Home Screen, 
-      select topics, and view related images.
+5. **Hope you will have fun exploring the app:**
+
+## Unfinished Feature
+
+While developing the Reminiscence Therapy App, I had plans to include an exciting feature that would allow users to upload their own images. Users would have the choice to upload images either from their device's gallery or by capturing a new picture using the device's camera.
+
+This feature was intended to provide users with the option to save personal memories to the app. However, due to time constraints, I was unable to complete the implementation of this feature.
+
 
 
