@@ -23,8 +23,8 @@ class _HomeState extends State<Home> {
             elevation: 0,
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24), // Add padding
             textStyle: const TextStyle(
-              fontSize: 16, // Adjust font size
-              fontWeight: FontWeight.bold, // Adjust font weight
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
             backgroundColor: Colors.blue[900],
           ),
