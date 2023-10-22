@@ -72,9 +72,9 @@ To run the Reminiscence Therapy App, follow these simple steps:
       flutter run
       ```
 
-5. **Hope you will have fun exploring the app:**
+5. **Hope you will have fun exploring the app**
 
-## Unfinished Feature
+## PS: Unfinished Feature
 
 While developing the Reminiscence Therapy App, I had plans to include an exciting feature that would allow users to upload their own images. Users would have the choice to upload images either from their device's gallery or by capturing a new picture using the device's camera.
 
